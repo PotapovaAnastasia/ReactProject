@@ -20,12 +20,12 @@ export const BigPost = ({ id }: idProp) => {
       <PostStyled>
         <main className="postMain">
           <div className="postMain__data">
-            <PostDate date={postData.date} />
+            <PostDate date={postData.publishedAt} />
             <Link to={`/posts/${id}`}><TitleBigStyled>{postData.title}</TitleBigStyled></Link>
-            <PostTextStyled>{postData.text}</PostTextStyled>
+            <PostTextStyled>{postData.description}</PostTextStyled>
           </div>
-          <div>
-            <Link to={`/posts/${id}`}><ImgBigStyled src={postData.image} alt="foto"></ImgBigStyled></Link>
+          <div className="postMain-image">
+            <Link to={`/posts/${id}`}><ImgBigStyled src={postData.urlToImage} alt="foto"></ImgBigStyled></Link>
           </div>
         </main>
         <PostFooter />

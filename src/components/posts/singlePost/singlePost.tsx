@@ -21,7 +21,7 @@ export const SinglePost = () => {
   }, [])
 
   const deletePost = () => {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    fetch(`https://reqres.in/api/articles/${id}`, {
       method: "DELETE",
     }).then((response) => alert("DELETED"))
       .then((data) => navigate('/posts'))
@@ -34,18 +34,18 @@ export const SinglePost = () => {
         <PostStyled>
           <main className="postMain">
             <div className="postMain__data">
-              <PostDate date={post.date} />
+              <PostDate date={post.publishedAt} />
               <TitleBigStyled>{post.title}</TitleBigStyled>
-              <PostTextStyled>{post.text}</PostTextStyled>
+              <PostTextStyled>{post.description}</PostTextStyled>
             </div>
-            <div>
-             <ImgBigStyled className="single-image" src={post.image} alt="foto"></ImgBigStyled>
+            <div className="postMain-image">
+             <ImgBigStyled className="single-image" src={post.urlToImage} alt="foto"></ImgBigStyled>
             </div>
           </main>
           <PostFooter />
         </PostStyled>
       
-        <Link to={`/posts/${post.id}/edit`}>
+        <Link to={`/posts/${id}/edit`}>
           <ButtonStyled>Edit post</ButtonStyled>
         </Link>
         <ButtonStyled  onClick={deletePost}>Delete</ButtonStyled>   

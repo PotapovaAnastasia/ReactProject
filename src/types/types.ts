@@ -36,10 +36,13 @@ export type MainInputProp = {
 export type Post = Partial<{
   id: number
   image: string
+  urlToImage: string
   text: string
   date: string
+  publishedAt: string
   lesson_num: number
   title: string
+  description: string
   author: number
 }>
 
@@ -49,9 +52,3 @@ export type idProp = {
   id: number
 }
 
-export type AccountProps = {
-  name: string
-  lastName: string
-  email: string
-  userName: string
-}

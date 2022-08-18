@@ -12,6 +12,7 @@ import { Account } from './components/account/account'
 import { NotFoundPage } from './components/notFoundPage/notFoundPage'
 import { SinglePost } from './components/posts/singlePost/singlePost'
 import { EditPost } from './components/posts/editPost/editPost'
+import { EditAccount } from './components/editAccount/editAccount'
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -32,10 +33,8 @@ function App() {
               <Route path="/posts" element={<PostsList />} />
               <Route path="/posts/:id" element={<SinglePost />} />
               <Route path="/posts/:id/edit" element={<EditPost />} />
-              <Route path="/account" element={<Account name='Ivan' 
-                                                      lastName='Ivanov' 
-                                                      email='ivanov@gmail.com' 
-                                                      userName='ivan123'/>} />
+              <Route path="/account" element={<Account />} />
+              <Route path="/account/edit" element={<EditAccount />} />
               <Route path="*" element={<NotFoundPage />} />
             </Route>      
           </Routes>    

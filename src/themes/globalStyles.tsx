@@ -45,6 +45,10 @@ export const GlobalStyles = createGlobalStyle<any>`
     flex: 0 0 55%;
   }
 
+  .postMain-image {
+    flex: 0 0 40%;
+  }
+
   span {
     display: inline-block;
     margin: 0 10px;
@@ -202,6 +206,10 @@ export const GlobalStyles = createGlobalStyle<any>`
     background: ${({ theme }) => theme.formBackground};
   }
 
+  .about-link: hover {
+    background: ${({ theme }) => theme.wrapperBorderColor};
+  }
+
   // ----------------------
 
   .home-wrapper {
@@ -250,12 +258,27 @@ export const GlobalStyles = createGlobalStyle<any>`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 300px;
+    height: 400px;
     align-items: center;
   }
 
   .edit-name {
     display: inline-block;
     margin-right: 20px;
+  }
+
+  .edit-textarea {
+    width: 480px;
+    height: 150px;
+
+    border: 1px solid #fff;
+    border-radius: 6px;
+
+    padding: 10px;
+
+    background-color: ${({ theme }) => theme.inputBackground};
+    box-shadow: 0 0 5px #b8b8b8;
+
+    resize: none;
   }
 `

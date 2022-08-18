@@ -19,11 +19,11 @@ export const LittlePost = ({ id }: idProp) => {
       <PostStyled>
         <main className="postMain">
           <div className="postMain__data">
-            <PostDate date={postData.date} />
+            <PostDate date={postData.publishedAt} />
             <Link to={`/posts/${id}`}><TitleMidStyled>{postData.title}</TitleMidStyled></Link>
           </div>
-          <div>
-            <Link to={`/posts/${id}`}><ImgLitStyled src={postData.image} alt="foto"></ImgLitStyled></Link>
+          <div className="postMain-image">
+            <Link to={`/posts/${id}`}><ImgLitStyled src={postData.urlToImage} alt="foto"></ImgLitStyled></Link>
           </div>
         </main>
         <PostFooter />

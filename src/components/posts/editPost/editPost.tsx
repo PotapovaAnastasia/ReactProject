@@ -16,7 +16,7 @@ export const EditPost = () => {
   }, [])
 
   const saveChanges = () => {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    fetch(`https://reqres.in/api/articles/${id}`, {
       method: "PUT",
       body: JSON.stringify(post),
     }).then((response) => alert("Edited"))
@@ -34,15 +34,15 @@ export const EditPost = () => {
       <div className="edit-inputs">
         <label>
           <span className="edit-name">Date:</span> 
-          <InputStyled onChange={(event: any) => setPost({...post, date: event.target.value})} value={post.date} />
+          <InputStyled onChange={(event: any) => setPost({...post, date: event.target.value})} value={post.publishedAt} />
         </label>
         <label>
           <span className="edit-name">Title:</span>  
           <InputStyled onChange={(event: any) => setPost({...post, title: event.target.value})} value={post.title} />
         </label>
-        <label>
+        <label style={{display: 'flex', alignItems: 'start'}}>
           <span className="edit-name">Text:</span>   
-          <InputStyled onChange={(event: any) => setPost({...post, text: event.target.value})} value={post.text} />
+          <textarea className="edit-textarea" onChange={(event: any) => setPost({...post, text: event.target.value})} value={post.description} />
         </label>
         <label>
           <span className="edit-name">Image file:</span>

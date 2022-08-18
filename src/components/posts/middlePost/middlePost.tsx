@@ -18,10 +18,10 @@ export const MiddlePost = ({ id }: idProp) => {
     return (
       <PostStyled>
         <div className="imgWrapper">
-          <Link to={`/posts/${id}`}><ImgMidStyled src={postData.image} alt="foto"></ImgMidStyled></Link>
+          <Link to={`/posts/${id}`}><ImgMidStyled src={postData.urlToImage} alt="foto"></ImgMidStyled></Link>
         </div>
         <div>
-          <PostDate date={postData.date} />
+          <PostDate date={postData.publishedAt} />
           <Link to={`/posts/${id}`}><TitleMidStyled>{postData.title}</TitleMidStyled></Link>
         </div>        
         <PostFooter />       

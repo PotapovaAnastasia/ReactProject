@@ -6,6 +6,9 @@ import { PostsContainerStyled } from "./postsContainer.styled"
 
 export const PostsContainer = ( {style} : any ) => {
   const idS = [10, 15, 16, 8, 9, 14, 7, 8, 9, 12, 6]
+  const data = []
+
+  
   
   return (
     <PostsContainerStyled style={style}>

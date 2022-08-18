@@ -5,6 +5,8 @@ import { InputField } from "../inputField/inputField"
 import { InputFieldProps } from "../../../types/types"
 import { TitleStyled } from "../title.styled"
 import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { getUserInfoAction } from "../../../redux/actions"
 
 export const Form = () => {
 
@@ -32,9 +34,10 @@ export const Form = () => {
   const userNameRegular = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/
 
   const navigate = useNavigate()
-  
 
-  const handleChangeFullName = (event: any) => {
+  const dispatch = useDispatch()
+
+    const handleChangeFullName = (event: any) => {
     const value: string = event.target.value
 
     if (!value.includes(' ')) {
@@ -155,6 +158,7 @@ export const Form = () => {
     setConfPasswordDirty(true)
     
     if (!fullNameError && !userNameError && !emailError && !passwordError && !confPasswordError && !checkboxError) {
+      dispatch(getUserInfoAction({fullName: fullName, userName: userName, email: email}))
       alert("Registration completed successfully")
       handleReset()
       navigate('/posts')
